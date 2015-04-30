@@ -7,11 +7,11 @@
 #define ECHO
 
 
-static void putchar(char c) {
+static void uart_putchar(char c) {
 	uart_write(&c, 1);
 }
 
-static char getchar() {
+static char uart_getchar() {
 	char c;
 	uart_read(&c, 1);
 	return c;
@@ -21,14 +21,14 @@ static char getchar() {
 static int uputc(char c, FILE *stream) {
 #ifdef CRLF
 	if (c == '\n')
-		putchar('\r');
+		uart_putchar('\r');
 #endif
-    putchar(c);
+   uart_putchar(c);
    return 0;
 }
 
 static int ugetc(FILE *stream) {
-	int c = getchar();
+	int c = uart_getchar();
 	return c;
 }
 
