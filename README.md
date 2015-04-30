@@ -1,7 +1,7 @@
 UART STDIO
 ===
 
-UART STDIO driver for ATmega328p (Arduino Uno rev3)
+UART STDIO driver for Arduino Uno
 
 > This module need *UART* module present
 
